@@ -21,6 +21,6 @@ f = open(backfile, write)
 addy = '192.168.157.11'
 vrouter = {'ip': addy, 'username': name, 'password': identification, 'device_type': 'cisco_ios'}
 connection = ConnectHandler(**vrouter)
-output = netmiko_send_command('showrun')
+output = connection.send_command('showrun')
 f.write(output)
 f.close() 
